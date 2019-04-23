@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spawn : MonoBehaviour {
 
     public GameObject prefab;
+
+    private int count = 0;
     
 
 
@@ -17,7 +19,10 @@ public class Spawn : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+           GameObject cube = Instantiate(prefab, transform.position, transform.rotation) as GameObject;
+            cube.name = "cubito" + count++;
+            Destroy(cube, 3f);
+
         }
 	}
 }
