@@ -21,6 +21,11 @@ public class Spawn : MonoBehaviour {
         {
            GameObject cube = Instantiate(prefab, transform.position, transform.rotation) as GameObject;
             cube.name = "cubito" + count++;
+
+            Fisica fisica = cube.GetComponent<Fisica>();
+
+            fisica.Shoot(); //llame un componente de la clase fisica, el shoot
+
             Destroy(cube, 3f);
 
         }

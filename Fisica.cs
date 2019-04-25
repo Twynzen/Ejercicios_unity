@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fisica : MonoBehaviour {
     public Rigidbody rb;
     // Use this for initialization
-    void Start () {
+    public void Shoot () {
         rb = GetComponent<Rigidbody>();
         float x = Random.Range(-1f, 1f);
         rb.AddForce(new Vector3(x,0f,1f) * 100f, ForceMode.Impulse);
